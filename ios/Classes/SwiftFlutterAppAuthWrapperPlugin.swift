@@ -100,7 +100,7 @@ public class SwiftFlutterAppAuthWrapperPlugin: NSObject, FlutterPlugin {
 		eventSink?(flutterError)
 	}
 	
-	public func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		if (authFlow?.resumeExternalUserAgentFlow(with: url) ?? false) {
 			authFlow = nil
 			return true
